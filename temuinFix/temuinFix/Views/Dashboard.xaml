@@ -29,7 +29,14 @@
                 <ListView x:Name="lstPersons">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Name}"></TextCell>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                                        <Label Text="{Binding Name}"></Label>
+                                        <Label Text="{Binding Description}"></Label>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
