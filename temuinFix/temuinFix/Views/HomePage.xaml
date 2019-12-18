@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             mc:Ignorable="d"
+             x:Class="temuinFix.Views.HomePage">
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <cv:CarouselViewControl x:Name="cvBanners" ShowIndicators="True" IndicatorsShape="Circle" IndicatorsTintColor="LightGray"
+                                CurrentPageIndicatorTintColor="Red" Orientation="Horizontal" InterPageSpacing="0"
+                                HeightRequest="270" ItemsSource="{Binding Banners}" HorizontalOptions="FillAndExpand"
+                                VerticalOptions="StartAndExpand" AnimateTransition="True">
+            <cv:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image Source="{Binding Image}" Aspect="Fill" HorizontalOptions="FillAndExpand"/>
+                        <Image Source="overlayCol.png" Aspect="Fill" HorizontalOptions="FillAndExpand"/>
+                        <StackLayout Margin="30,20,0,0" Spacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                            <Label Text="{Binding Heading}" TextColor="White" FontSize="12" FontFamily="{StaticResource ThinFont}"/>
+                            <BoxView BackgroundColor="White" HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="1" WidthRequest="50"/>
+                            <StackLayout>
+                                <Label Text="{Binding Message}" TextColor="White" FontSize="35" FontFamily="{StaticResource JosefinBold}"/>
+                                <Label Text="{Binding Caption}" TextColor="White" FontSize="12" FontFamily="{StaticResource LightFont}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </cv:CarouselViewControl.ItemTemplate>
+        </cv:CarouselViewControl>
+        <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid RowSpacing="30" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid RowSpacing="30" Margin="30,0,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Barang Hilang" TextColor="Black" Margin="0,20,0,0" FontSize="20" FontFamily="{StaticResource JosefinBold}"/>
+                    <Label Text="Show all" TextColor="Black" FontSize="14" VerticalOptions="Center" Opacity="0.5" HorizontalOptions="End" Margin="0,30,30,0" FontFamily="{StaticResource JosefinRegular}"/>
+                    <ScrollView Orientation="Horizontal" Grid.Row="1" VerticalOptions="Start" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                        <StackLayout BindableLayout.ItemsSource="{Binding CollectionsList}" Orientation="Horizontal" Spacing="20" VerticalOptions="Start">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout VerticalOptions="Start">
+                                        <Frame Padding="0" HasShadow="False" HorizontalOptions="Start" CornerRadius="10" HeightRequest="150" WidthRequest="150">
+                                            <Image Source="{Binding Image}" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                        </Frame>
+                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="15" FontFamily="{StaticResource JosefinRegular}"/>
+                                        <Label Text="{Binding Location}" Margin="0,-7,0,0" TextColor="#5663FF" FontSize="12" FontFamily="{StaticResource JosefinRegular}"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+                <Grid Grid.Row="1" RowSpacing="20" Margin="30,0,0,30" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Barang Temuan" TextColor="Black" FontSize="20" FontFamily="{StaticResource JosefinBold}"/>
+                    <Label Text="Show all" TextColor="Black" FontSize="14" VerticalOptions="Center" Opacity="0.5" FontFamily="{StaticResource JosefinRegular}" HorizontalOptions="End" Margin="0,0,30,0"/>
+                    <ScrollView Orientation="Horizontal" Grid.Row="1" VerticalOptions="Start" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding TrendsList}" Spacing="15" VerticalOptions="Start">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Start" WidthRequest="220">
+                                        <Frame Padding="0" HasShadow="False" HorizontalOptions="Start" VerticalOptions="Start" CornerRadius="10" HeightRequest="90" WidthRequest="70">
+                                            <Image Source="{Binding Image}" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                        </Frame>
+                                        <StackLayout Margin="0,12,0,0">
+                                            <Label Text="{Binding Name}" TextColor="Black" FontSize="15" FontFamily="{StaticResource JosefinRegular}"/>
+                                            <Label Text="{Binding Location}" Margin="0,-7,0,0" TextColor="#5663FF" FontSize="12" FontFamily="{StaticResource JosefinRegular}"/>
+                                            <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
+                                                <Label Text="Jemput kuy" TextColor="Black" FontSize="12" Opacity="0.6" VerticalOptions="Center" FontFamily="{StaticResource JosefinRegular}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>
