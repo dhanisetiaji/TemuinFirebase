@@ -15,18 +15,17 @@
                 <Entry x:Name="txtDescription" Placeholder="Description"></Entry>
                 <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                     <Button x:Name="btnAdd" WidthRequest="200" Text="Add" Clicked="BtnAdd_Clicked"/>
-                    <Button x:Name="btnRetrive" WidthRequest="200" Text="Retrive" Clicked="BtnRetrive_Clicked"/>
-                </StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                     <Button x:Name="btnUpdate" WidthRequest="200" Text="Update" Clicked="BtnUpdate_Clicked" />
+                </StackLayout>
+                <StackLayout>
                     <Button x:Name="btnDelete" WidthRequest="200" Text="Delete" Clicked="BtnDelete_Clicked" />
                 </StackLayout>
                 <StackLayout>
                     <Button x:Name="deletebtn" WidthRequest="200" Text="Delete Account" Command="{Binding DeleteCommand}"/>
                     <Button x:Name="logoutbtn" WidthRequest="200" Text="Logout" Command="{Binding LogoutCommand}"/>
                 </StackLayout>
-                
-                <ListView x:Name="lstPersons">
+
+                 <ListView x:Name="lstPersons">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -39,7 +38,7 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
+                </ListView> 
             </StackLayout>
 
         </StackLayout>

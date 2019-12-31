@@ -7,9 +7,13 @@
              x:Class="temuinFix.Views.NotifPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Image Source="bellmute" HeightRequest="100" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label Text="No Notification Here Now!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

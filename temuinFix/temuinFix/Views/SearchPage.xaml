@@ -6,10 +6,19 @@
              mc:Ignorable="d"
              x:Class="temuinFix.Views.SearchPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="0">
+            <ListView x:Name="lstPersons">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="2" Orientation="Vertical">
+                                <Label Text="{Binding Name}" FontSize="Medium" LineBreakMode="NoWrap" Margin="10,0,0,0"/>
+                                <Label Text="{Binding Description}" FontSize="Small" LineBreakMode="NoWrap" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

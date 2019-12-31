@@ -15,6 +15,7 @@ namespace temuinFix.Views
         public NotifPage()
         {
             InitializeComponent();
+
         }
     }
 }

@@ -38,7 +38,7 @@
                     <Frame CornerRadius="20"
                            Padding="0"
                            IsClippedToBounds="True">
-                        <Image Source="logoku.jpg" 
+                        <Image Source="login.png" 
                                HorizontalOptions="Center"
                                VerticalOptions="End" HeightRequest="90"/>
                     </Frame>
