@@ -33,7 +33,7 @@ namespace temuinFix.Views
             txtName.Text = string.Empty;
             txtDescription.Text = string.Empty;
             txtAddress.Text = string.Empty;
-            await DisplayAlert("Success", "Person Added Successfully", "OK");
+            await DisplayAlert("Success", "Data Added Successfully", "OK");
             var allPersons = await firebaseHelper.GetAllPersons();
             lstPersons.ItemsSource = allPersons;
         }
@@ -45,7 +45,7 @@ namespace temuinFix.Views
             txtName.Text = string.Empty;
             txtDescription.Text = string.Empty;
             txtAddress.Text = string.Empty;
-            await DisplayAlert("Success", "Person Updated Successfully", "OK");
+            await DisplayAlert("Success", "Data Updated Successfully", "OK");
             var allPersons = await firebaseHelper.GetAllPersons();
             lstPersons.ItemsSource = allPersons;
         }
@@ -53,7 +53,7 @@ namespace temuinFix.Views
         private async void BtnDelete_Clicked(object sender, EventArgs e)
         {
             await firebaseHelper.DeletePerson(Convert.ToInt32(txtPersonId.Text));
-            await DisplayAlert("Success", "Person Deleted Successfully", "OK");
+            await DisplayAlert("Success", "Data Deleted Successfully", "OK");
             var allPersons = await firebaseHelper.GetAllPersons();
             lstPersons.ItemsSource = allPersons;
         }
