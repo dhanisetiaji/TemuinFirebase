@@ -21,16 +21,17 @@ namespace temuinFix.Services
               {
                   Name = item.Object.Name,
                   PersonId = item.Object.PersonId,
-                  Description = item.Object.Description
+                  Description = item.Object.Description,
+                  Address = item.Object.Address
               }).ToList();
         }
 
-        public async Task AddPerson(int personId, string name, string description)
+        public async Task AddPerson(int personId, string name, string description, string address)
         {
 
             await firebase
               .Child("Persons")
-              .PostAsync(new Person() { PersonId = personId, Name = name, Description = description });
+              .PostAsync(new Person() { PersonId = personId, Name = name, Description = description, Address = address });
         }
 
         public async Task<Person> GetPerson(int personId)
@@ -42,21 +43,16 @@ namespace temuinFix.Services
             return allPersons.Where(a => a.PersonId == personId).FirstOrDefault();
         }
 
-        public async Task UpdatePerson(int personId, string name, string description)
+        public async Task UpdatePerson(int personId, string name, string description, string address)
         {
             var toUpdatePerson = (await firebase
               .Child("Persons")
               .OnceAsync<Person>()).Where(a => a.Object.PersonId == personId).FirstOrDefault();
 
-            var toUpdateDescription = (await firebase
-                .Child("Persons")
-                .OnceAsync<Person>()).Where(a => a.Object.Description == description).FirstOrDefault();
-
             await firebase
               .Child("Persons")
               .Child(toUpdatePerson.Key)
-              .Child(toUpdateDescription.Key)
-              .PutAsync(new Person() { PersonId = personId, Name = name, Description = description });
+              .PutAsync(new Person() { PersonId = personId, Name = name, Description = description, Address = address });
         }
 
         public async Task DeletePerson(int personId)

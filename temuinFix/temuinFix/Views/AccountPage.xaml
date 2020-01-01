@@ -8,34 +8,32 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
-                <Image Source="sampul" HorizontalOptions="FillAndExpand" HeightRequest="200" VerticalOptions="Start"/>
-                <Image Source="profilepict" HeightRequest="60" WidthRequest="60" HorizontalOptions="Center" VerticalOptions="Start" />
+            <StackLayout Spacing="0" Padding="0" Margin="20,20,20,0" BackgroundColor="White">
+                <Image Source="profilepict" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Start" />
                 <StackLayout HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" BackgroundColor="White">
-                    <Label Text="Jennie" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
-                    <Entry Text="19 yo, Tanjungpura State University" TextColor="Black" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                    <Label Text="Jennie" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontFamily="{StaticResource JosefinRegular}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="White" Padding="5">
                     <StackLayout Spacing="0" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="Start">
                         <Image Source="point" WidthRequest="40" HeightRequest="40"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
-                        <Label FontSize="14" TextColor="Black" Text="5 Found Item" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        <Label FontSize="14" TextColor="Black" Text="5 Found Item" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontFamily="{StaticResource JosefinRegular}"/>
                     </StackLayout>
                     <StackLayout Spacing="0" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
                         <Image Source="star" WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center" />
-                        <Label FontSize="14" TextColor="Black" Text="50 Point" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        <Label FontSize="14" TextColor="Black" Text="50 Point" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontFamily="{StaticResource JosefinRegular}"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label FontSize="14" Text="Address:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                    <Entry HorizontalOptions="FillAndExpand" Text="Yogyakarta, INA" TextColor="Black" BackgroundColor="White" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="Yogyakarta, INA" TextColor="Black" BackgroundColor="White" FontFamily="{StaticResource JosefinRegular}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label FontSize="14" Text="Email:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                    <Entry HorizontalOptions="FillAndExpand" Text="hartono@gmail.com" TextColor="Black" BackgroundColor="White" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="hartono@gmail.com" TextColor="Black" BackgroundColor="White" FontFamily="{StaticResource JosefinRegular}" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label FontSize="14" Text="Phone Number:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
-                    <Entry HorizontalOptions="FillAndExpand" Text="0896-0296-0062" TextColor="Black" BackgroundColor="White" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="0896-0296-0062" TextColor="Black" BackgroundColor="White" FontFamily="{StaticResource JosefinRegular}"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

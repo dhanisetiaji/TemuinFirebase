@@ -8,12 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Image Source="bellmute" HeightRequest="100" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
-            <StackLayout>
-                <Label Text="No Notification Here Now!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                
-            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -43,10 +43,10 @@
                                VerticalOptions="End" HeightRequest="90"/>
                     </Frame>
                 </StackLayout>
-                <Entry Grid.Row="1" Placeholder="Masukan Email" PlaceholderColor="#bababa" Text="{Binding Email}" FontSize="16"/>
-                <Entry Grid.Row="2" Placeholder="Masukan Password" PlaceholderColor="#bababa" Text="{Binding Password}" IsPassword="True" FontSize="16"/>
-                <Button Text="LogIn" Command="{Binding LoginCommand}" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
-                <Label Text="Login Trouble? Get Help" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/>
+                <Entry Grid.Row="1" Placeholder="Masukan Email"  PlaceholderColor="#bababa" Text="{Binding Email}" FontSize="16" FontFamily="{StaticResource JosefinRegular}" />
+                <Entry Grid.Row="2" Placeholder="Masukan Password" PlaceholderColor="#bababa" Text="{Binding Password}" IsPassword="True" FontSize="16" FontFamily="{StaticResource JosefinRegular}"/>
+                <Button Text="LogIn" Command="{Binding LoginCommand}" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" FontFamily="{StaticResource JosefinRegular}"/>
+                <Label Text="Login Trouble? Get Help" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12" FontFamily="{StaticResource JosefinBold}"/>
 
                 <Grid Grid.Row="5">
 
@@ -87,8 +87,8 @@
                 <Label LineBreakMode="WordWrap" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Dont'Have Account Login? " />
-                            <Span Text="SignUp">
+                            <Span Text="Dont'Have Account Login? " FontFamily="{StaticResource JosefinRegular}"/>
+                            <Span Text="SignUp" FontFamily="{StaticResource JosefinBold}">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding SignUp}" />
                                 </Span.GestureRecognizers>

@@ -6,41 +6,65 @@
              mc:Ignorable="d"
              x:Class="temuinFix.Views.Dashboard">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Email, StringFormat='Welcome {0}'}" Margin="10"/>
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
-                <Image x:Name="imgBanner" Source="firebase.png" ></Image>
-                <Entry x:Name="txtId" Placeholder="ID"></Entry>
-                <Entry x:Name="txtName" Placeholder="Enter Name Barang"></Entry>
-                <Entry x:Name="txtDescription" Placeholder="Description"></Entry>
-                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                    <Button x:Name="btnAdd" WidthRequest="200" Text="Add" Clicked="BtnAdd_Clicked"/>
-                    <Button x:Name="btnUpdate" WidthRequest="200" Text="Update" Clicked="BtnUpdate_Clicked" />
-                </StackLayout>
-                <StackLayout>
-                    <Button x:Name="btnDelete" WidthRequest="200" Text="Delete" Clicked="BtnDelete_Clicked" />
-                </StackLayout>
-                <StackLayout>
-                    <Button x:Name="deletebtn" WidthRequest="200" Text="Delete Account" Command="{Binding DeleteCommand}"/>
-                    <Button x:Name="logoutbtn" WidthRequest="200" Text="Logout" Command="{Binding LogoutCommand}"/>
-                </StackLayout>
+        <Grid BackgroundColor="White">
 
-                 <ListView x:Name="lstPersons">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal">
-                                        <Label Text="{Binding Name}"></Label>
-                                        <Label Text="{Binding Description}"></Label>
-                                    </StackLayout>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView> 
-            </StackLayout>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        </StackLayout>
+            <Grid Grid.Row="0" Margin="20,0,20,0">
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Label Text="{Binding Email, StringFormat='Welcome {0}'}" Grid.Row="0" Margin="10" FontFamily="{StaticResource JosefinRegular}"/>
+                <Entry Grid.Row="1" Placeholder="Id" PlaceholderColor="#bababa" x:Name="txtPersonId" FontSize="16" FontFamily="{StaticResource JosefinBold}"/>
+                <Entry Grid.Row="2" Placeholder="Nama" PlaceholderColor="#bababa" x:Name="txtName" FontSize="16" FontFamily="{StaticResource JosefinBold}"/>
+                <Entry Grid.Row="3" Placeholder="Description" PlaceholderColor="#bababa" x:Name="txtDescription" FontSize="16" FontFamily="{StaticResource JosefinBold}"/>
+                <Entry Grid.Row="4" Placeholder="Address" PlaceholderColor="#bababa" x:Name="txtAddress" FontSize="16" FontFamily="{StaticResource JosefinBold}"/>
+                <Button x:Name="btnAdd" Text="Add" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start"  Grid.Row="5"  Clicked="BtnAdd_Clicked" FontFamily="{StaticResource JosefinRegular}"/>
+                <Button Text="Update" x:Name="btnUpdate" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="6" Clicked="BtnUpdate_Clicked" FontFamily="{StaticResource JosefinRegular}"/>
+                <Button Text="Delete" x:Name="btnDelete" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="7" Clicked="BtnDelete_Clicked" FontFamily="{StaticResource JosefinRegular}"/>
+
+                <StackLayout Grid.Row="8" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="deletebtn"  Text="Delete Account" BackgroundColor="#3897f0" TextColor="White"  VerticalOptions="Start" WidthRequest="200" Command="{Binding DeleteCommand}" FontFamily="{StaticResource JosefinRegular}"/>
+                    <Button x:Name="logoutbtn"  Text="Logout" BackgroundColor="#3897f0" TextColor="White" VerticalOptions="Start" WidthRequest="200" Command="{Binding LogoutCommand}" FontFamily="{StaticResource JosefinRegular}"/>
+                </StackLayout>
+                <Label Text="Data yang sudah di submit :" HorizontalOptions="Center" Grid.Row="9" Margin="0,10,0,0" FontSize="15" FontFamily="{StaticResource JosefinRegular}"/>
+                <StackLayout Grid.Row="10">
+                    <ListView x:Name="lstPersons">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                                            <Label Text="{Binding PersonId, StringFormat='Id: {0},'}" FontFamily="{StaticResource JosefinRegular}"></Label>
+                                            <Label Text="{Binding Name, StringFormat='Nama: {0},'}" FontFamily="{StaticResource JosefinRegular}"></Label>
+                                            <Label Text="{Binding Description, StringFormat='Deskripsi: {0},'}" FontFamily="{StaticResource JosefinRegular}"></Label>
+                                            <Label Text="{Binding Address, StringFormat='Alamat: {0}'}" FontFamily="{StaticResource JosefinRegular}"></Label>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </Grid>
+
+
+
     </ContentPage.Content>
 </ContentPage>
